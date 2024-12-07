@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ParticipantSeeder extends Seeder
 {
@@ -15,17 +16,17 @@ class ParticipantSeeder extends Seeder
         $participants=[
             [
                 'event_id'=>'1',
-                'user_id'=>'3',
+                'client_id'=>'3',
 
             ],
             [
                 'event_id'=>'1',
-                'user_id'=>'4',
+                'client_id'=>'4',
 
             ],
             [
                 'event_id'=>'2',
-                'user_id'=>'4',
+                'client_id'=>'4',
 
             ]
         ];
