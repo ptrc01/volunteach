@@ -10,20 +10,18 @@
                         <div class="row gx-0">
                             <div class="col-lg-6 col-xl-5 py-lg-5">
                                 <div class="p-4 p-md-5">
-                                    <div class="h2 fw-bolder">Join Us</div>
-                                    <p>Give Back Through Teaching, Volunteer Today!</p>
+                                    <div class="h2 fw-bolder">Join Us to Make a Difference!</div>
+                                    <p>Become a volunteer and help educate those in need.</p>
                                     <!-- Sign Up Button -->
                                     <button class="btn btn-primary btn-sm px-4 py-2 border-2 rounded-pill">
                                         Sign Up
                                     </button>
-                                    <!-- Login Button -->
-                                    <button class="btn btn-outline-primary btn-sm px-4 py-2 border-2 rounded-pill">
-                                        Login
-                                    </button>
                                 </div>
                             </div>
                             {{-- Image --}}
-                            <div class="col-lg-6 col-xl-7"><div class="bg-featured-blog" style="background-image: url('images/home/1.png')"></div></div>
+                            <div class="col-lg-6 col-xl-7">
+                                <img src="images/home/1.png" alt="Featured Blog Image" class="img-fluid" />
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -31,53 +29,14 @@
         </section>
         <section class="py-5 bg-light">
             <div class="container px-5">
-                <div class="row gx-5">
-                    <div class="col-xl-8">
-                        <h2 class="fw-bolder fs-5 mb-4">News</h2>
-                        <!-- News item-->
-                        <div class="mb-4">
-                            <div class="small text-muted">August 23, 2024</div>
-                            <a class="link-dark" href="#!"><h3>Building the Nation's Future: The Role of Education Volunteers in Driving Change in Indonesia</h3></a>
-                        </div>
-                        <!-- News item-->
-                        <div class="mb-5">
-                            <div class="small text-muted">June 5, 2024</div>
-                            <a class="link-dark" href="#!"><h3>Teachers: Heroes Behind the Classroom Scenes</h3></a>
-                        </div>
-                        <!-- News item-->
-                        <div class="mb-5">
-                            <div class="small text-muted">May 21, 2024</div>
-                            <a class="link-dark" href="#!"><h3>Service to the Nation: Stories of Education Volunteers Dedication in Areas with Limited Access</h3></a>
-                        </div>
-                        <div class="text-end mb-5 mb-xl-0">
-                            <a class="text-decoration-none" href="#!">
-                                More news
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-4">
-                        <div class="card border-0 h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex h-100 align-items-center justify-content-center">
-                                    <div class="text-center">
-                                        <div class="h6 fw-bolder">Contact</div>
-                                        <p class="text-muted mb-4">
-                                            For press inquiries, email us at
-                                            <br />
-                                            <a href="#!">volunteach@gmail.com</a>
-                                        </p>
-                                        <div class="h6 fw-bolder">Follow us</div>
-                                        <a class="fs-5 px-2 link-dark" href="https://www.x.com"><i class="bi-twitter"></i></a>
-                                        <a class="fs-5 px-2 link-dark" href="https://www.facebook.com"><i class="bi-facebook"></i></a>
-                                        <a class="fs-5 px-2 link-dark" href="https://www.linkedin.com"><i class="bi-linkedin"></i></a>
-                                        <a class="fs-5 px-2 link-dark" href="https://www.youtube.com"><i class="bi-youtube"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{-- About Us --}}
+                <div class="h2 fw-bolder text-center mb-3">Who We Are</div>
+                <p class="text-muted text-center fs-5">Empowering communities through education, one connection at a time. Our mission is to bridge passionate volunteers with meaningful teaching opportunities to inspire and uplift society.</p>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary btn-sm px-4 py-2 border-2 rounded-pill">
+                        Learn More
+                    </button>
+                </div>   
             </div>
         </section>
         <!-- Blog preview section-->
@@ -151,12 +110,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="text-end mb-5 mb-xl-0">
-                    <a class="text-decoration-none" href="#!">
-                        More stories
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </section>
