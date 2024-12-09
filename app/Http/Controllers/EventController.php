@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::paginate(5); // Fetch 5 events per page
+        $events = Event::paginate(5);
         return view('admin.dashboard', compact('events'));
     }
 
@@ -19,6 +19,7 @@ class EventController extends Controller
         return view('events.create');
     }
 
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -27,7 +28,7 @@ class EventController extends Controller
             'date' => 'required|date',
             'time' => 'required',
             'description' => 'required|string',
-            'admin_id' => 'required|exists:clients,id', // Ensure admin exists
+            'admin_id' => 'required|exists:clients,id',
         ]);
 
         Event::create($validatedData);
