@@ -10,3 +10,7 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/home', function() {
     return view('home');
 });
+
+Route::get('/aboutus', function() {
+    return view('aboutus');
+});
