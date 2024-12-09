@@ -9,9 +9,10 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::paginate(4);
-        return view('volunteer.index', compact('events'));
+        $events = Event::paginate(5); // Fetch 5 events per page
+        return view('admin.dashboard', compact('events'));
     }
+
 
     public function create()
     {
@@ -73,7 +74,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         return view('volunteer.register', compact('event'));
     }
-    
+
     public function register(Request $request, $id)
     {
         $event = Event::findOrFail($id);
