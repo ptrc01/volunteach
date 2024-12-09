@@ -9,12 +9,10 @@
         <p class="text-gray-600 mt-2">Welcome back, Admin! Manage volunteer events from here.</p>
     </div>
 
-    <!-- Event Management Section -->
     <div class="mb-5">
         <h2 class="mb-3">Manage Events</h2>
 
         <a href="{{ route('admin.events.create') }}" class="btn btn-primary mb-3">Create New Event</a>
-
 
         <table class="table table-bordered">
             <thead>
@@ -32,8 +30,11 @@
                         <td>{{ $event->date }}</td>
                         <td>{{ $event->location }}</td>
                         <td>
+                            <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-info btn-sm">View Details</a>
+
 
                             <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-warning btn-sm">Edit</a>
+
                             
                             <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
@@ -50,7 +51,7 @@
             </tbody>
         </table>
 
-        <!-- Pagination -->
+
         {{ $events->links() }}
     </div>
 </div>

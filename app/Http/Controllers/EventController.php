@@ -35,11 +35,7 @@ class EventController extends Controller
         return redirect()->route('events.index')->with('success', 'Event created successfully!');
     }
 
-    public function show($id)
-    {
-        $event = Event::findOrFail($id);
-        return view('events.show', compact('event'));
-    }
+
 
     public function edit($id)
     {
@@ -61,6 +57,14 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $event->update($validatedData);
         return redirect()->route('events.index')->with('success', 'Event updated successfully!');
+    }
+
+    public function show($id)
+    {
+
+        $event = Event::findOrFail($id);
+
+        return view('admin.events.show', compact('event'));
     }
 
     public function destroy($id)
