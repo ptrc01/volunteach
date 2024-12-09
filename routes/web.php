@@ -25,13 +25,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
 });
 
-
-// Route::prefix('admin')->group(function () {
-//     Route::get('/events', [EventController::class, 'index'])->name('admin.events.index');
-//     Route::get('/events/create', [EventController::class, 'create'])->name('admin.events.create');
-
-// });
-
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [EventController::class, 'index'])->name('admin.dashboard');
     Route::get('/events/create', [EventController::class, 'create'])->name('admin.events.create');
@@ -41,5 +34,6 @@ Route::prefix('admin')->group(function () {
     Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('admin.events.destroy');
 });
 
+Route::get('/admin/events/create', [EventController::class, 'create'])->name('admin.events.create');
 
 

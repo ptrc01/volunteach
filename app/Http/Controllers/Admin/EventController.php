@@ -17,12 +17,15 @@ class EventController extends Controller
 
     public function create()
     {
-        return view('events.create');
+        return view('admin.events.create');
     }
+
+
 
 
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'location' => 'required|string|max:255',
@@ -31,9 +34,17 @@ class EventController extends Controller
             'description' => 'required|string',
         ]);
 
-        Event::create($request->all());
 
-        return redirect()->route('admin.events.index')->with('success', 'Event created successfully.');
+        Event::create([
+            'name' => $request->name,
+            'location' => $request->location,
+            'date' => $request->date,
+            'time' => $request->time,
+            'description' => $request->description,
+        ]);
+
+
+        return redirect()->route('admin.events.index')->with('success', 'Event created successfully!');
     }
 
 
