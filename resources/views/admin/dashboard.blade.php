@@ -13,10 +13,9 @@
     <div class="mb-5">
         <h2 class="mb-3">Manage Events</h2>
 
-        <!-- Create Event Button -->
         <a href="{{ route('admin.events.create') }}" class="btn btn-primary mb-3">Create New Event</a>
 
-        <!-- Event List Table -->
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -33,9 +32,9 @@
                         <td>{{ $event->date }}</td>
                         <td>{{ $event->location }}</td>
                         <td>
-                            <!-- Edit Button -->
+
                             <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <!-- Delete Button -->
+                            
                             <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
