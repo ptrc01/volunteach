@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Registration;
+use App\Models\Volunteer;
 
 class VolunteerController extends Controller
 {
@@ -42,4 +43,10 @@ class VolunteerController extends Controller
 
         return redirect('/volunteer')->with('success', 'Registration completed successfully! We will contact you soon.');
     }
+
+        public function viewVolunteers(){
+        $volunteers = Volunteer::with('event')->get(); // Ambil data volunteer beserta event
+        return view('admin.volunteers', compact('volunteers'));
+    }
+
 }

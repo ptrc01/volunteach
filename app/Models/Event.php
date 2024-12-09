@@ -14,7 +14,8 @@ class Event extends Model
         'date',
         'time',
         'description',
-        'admin_id'
+        'admin_id',
+        'image'
     ];
 
     public function admin(): BelongsTo
