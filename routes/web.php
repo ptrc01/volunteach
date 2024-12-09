@@ -1,41 +1,35 @@
 <?php
 
-use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VolunteerController;
-use App\Http\Controllers\AdminController;
+use App\Models\Event;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\AuthController;
 
 
-Route::get('/', [EventController::class, 'index']);
-
-Route::get('/home', function() {
-    return view('home');
-});
-
-Route::get('/aboutus', function() {
-    return view('aboutus');
-});
+Route::get('/', [ClientController::class, 'navigateToHome'])->name('client.index');
+Route::get('/aboutUs', [ClientController::class, 'navigateToAboutUs'])->name('client.aboutUs');
 
 
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+Route::get('register', [AuthController::class, 'register'])->name('register');
+Route::post('doRegis', [AuthController::class, 'doRegis'])->name('doRegis');
 
-    Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
-});
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('doLogin', [AuthController::class, 'doLogin'])->name('doLogin');
 
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [EventController::class, 'index'])->name('admin.dashboard');
-    Route::get('/events/create', [EventController::class, 'create'])->name('admin.events.create');
-    Route::post('/events', [EventController::class, 'store'])->name('admin.events.store');
-    Route::get('/events/{id}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
-    Route::put('/events/{id}', [EventController::class, 'update'])->name('admin.events.update');
-    Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('admin.events.destroy');
-    Route::get('/events/{id}', [EventController::class, 'show'])->name('admin.events.show');
-    Route::get('/events', [EventController::class, 'index'])->name('admin.events.index');
-});
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/adminDashboard', [EventController::class, 'adminDashboard'])->name('admin.dashboard');
+Route::get('/event', [EventController::class, 'showEvent'])->name('event.list');
+Route::get('/event/{event}', [EventController::class, 'eventDetails'])->name('event.detail');
+Route::get('/events/create', [EventController::class, 'createEventForm'])->name('event.create');
+Route::post('/events', [EventController::class, 'storeEvent'])->name('event.store');
+Route::get('/events/{event}/edit', [EventController::class, 'showEditForm'])->name('event.edit');
+Route::put('/events/{event}', [EventController::class, 'updateEvent'])->name('event.update');
+Route::delete('/events/{event}', [EventController::class, 'deleteEvent'])->name('event.delete');
 
+Route::get('/events/{event}', [ParticipantController::class, 'showDetails'])->name('event.details');
+Route::post('/event/{event}/register', [ParticipantController::class, 'submitRegister'])->name('participant.store');
 
 
